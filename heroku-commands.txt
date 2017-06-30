@@ -1,0 +1,69 @@
+$heroku login
+Loga no heroku por linha de comando
+
+$heroku create
+Cria um dyno para a aplicação da pasta
+
+$git push heroku master
+Envia o código para o dyno do Heroku, mas o commit continua
+local, já que não é o repo de origem
+
+$heroku ps:scale web=1
+Inicia a aplicação em 1 dyno, mais do que isso paga
+
+$heroku ps:scale web=0
+Para a aplicação
+
+$heroku open
+Abre a página da aplicação
+
+$heroku open %{URL_GET}
+Abre a página da aplicação com um get a URL_GET
+
+$heroku logs --tail
+Vê os logs em tempo real
+
+$heroku logs -n %{NUMERO_LINHAS}
+Exibe NUMERO_LINHAS últimas linhas do log
+
+$heroku logs --ps %{PROCESS_TYPE}
+Mostra os logs só dos dynos do tipo PROCESS_TYPE, ex: web
+
+$heroku ps
+Mostra os dynos executando
+
+$heroku local web
+Sobe a aplicação localmente, $heroku local pode ser usado
+após a primeira vez
+
+$heroku addons:create %{NOME_ADDON}
+Adiciona o addon NOME_ADDON à aplicação, exemplo papertrail
+
+$heroku addons
+Lista os addons
+
+$heroku addons:open %{NOME_ADDON}
+Abre o addon NOME_ADDON, exemplo papertrail, que abre no browser
+
+$heroku run node
+Abre no terminal um executor de scripts do Node, para app em Node
+
+$heroku run bash
+Abre o terminal da aplicação, incluindo o sistema de arquivos
+
+-------------------- CONFIG VARS --------------------
+$heroku config:set %{VAR_NAME}=%{VAR_VELUE}
+Seta uma env var no heroku, exemplo TIMES=2 no tutorial, o arquivo
+.env pode ser usado para setar env vars também (LOCALMENTE), mas o
+config:set do heroku não modifica este arquivo, seta apenas no REMOTO
+e não no local, obviamente, porque no local o próprio SO administra
+as env vars.
+
+$heroku config
+Exibe as variáveis e configurações atuais no heroku
+
+$heroku config:get %{VAR_NAME}
+Exibe uma variável específica, ex: MONGODB_URI
+
+$heroku config:unset %{VAR_NAME}
+Apaga a env var no heroku.
