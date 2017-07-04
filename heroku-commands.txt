@@ -66,4 +66,18 @@ $heroku config:get %{VAR_NAME}
 Exibe uma variável específica, ex: MONGODB_URI
 
 $heroku config:unset %{VAR_NAME}
-Apaga a env var no heroku.
+Apaga a env var no heroku
+
+-------------------- BUILDPACK --------------------
+$heroku buildpacks:add %{BUILDPACK_URL}
+Adiciona um novo buildpack a partir da URL, pode ser por exemplo
+uma URL do GitHub
+
+$heroku buildpacks:clear
+Limpa todos os buildpacks da aplicação
+
+$heroku buildpacks:remove %{BUILDPACK_URL}
+Remove um buildpack da aplicação
+
+$heroku buildpacks:set %{BUILDPACK_URL}
+Sobrescreve o buildpack da aplicação
