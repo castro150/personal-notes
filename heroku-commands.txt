@@ -81,3 +81,8 @@ Remove um buildpack da aplicação
 
 $heroku buildpacks:set %{BUILDPACK_URL}
 Sobrescreve o buildpack da aplicação
+
+-------------------- RELEASES --------------------
+$heroku releases
+Exibe as releases, usar o heroku help releases para se ter acesso às
+opções deste comando
