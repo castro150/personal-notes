@@ -86,3 +86,10 @@ Sobrescreve o buildpack da aplicação
 $heroku releases
 Exibe as releases, usar o heroku help releases para se ter acesso às
 opções deste comando
+
+-------------------- CACHE --------------------
+$heroku plugins:install heroku-repo
+Instala o plugin de limpeza de cache
+
+$heroku repo:purge_cache
+Limpa o cache
